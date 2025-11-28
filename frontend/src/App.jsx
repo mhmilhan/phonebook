@@ -62,7 +62,7 @@ const App = () => {
           .catch((error) => {
             showNotification(
               `Information of ${existingPerson.name} has already been removed from server`,
-              "error"
+              `error: ${error}`
             );
             setPersons(persons.filter((p) => p.id !== existingPerson.id));
           });
@@ -112,7 +112,7 @@ const App = () => {
       .catch((error) => {
         showNotification(
           `Person '${name}' was already removed from server`,
-          "error"
+          `error: ${error}`
         );
         setPersons(persons.filter((p) => p.id !== id));
       });
